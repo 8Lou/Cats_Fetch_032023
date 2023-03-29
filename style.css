@@ -1,0 +1,69 @@
+/* базовые насстройки */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: rgb(45, 180, 233);
+}
+
+h3 {
+    margin: 0;
+}
+
+/* карточки */
+.container {
+    background-color: coral;
+    min-height: 100vh; /* мин высота */
+    padding: 30px; /* отступы */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд с одинак рас */
+    align-content: flex-start; /* выравнивание по верхней части */
+    gap: 30px; /* расстояние меж карточками */
+}
+
+.card {
+    background-color: rgb(204, 195, 195);
+    padding: 15px;
+    text-align: center; /* выравнивание текста по центру */
+    position: relative; /* что-то для сердечка */
+    border-radius: 8px;
+    background-image: url(https://mobimg.b-cdn.net/v3/fetch/25/25226515c9fe72ab7a2c45a72f9283c3.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* по размеру карточки */
+    overflow: hidden; /* убрать все выпадающие части фона */
+    display: flex;
+    flex-direction: column; /* сверху вниз */
+    justify-content: center;
+}
+
+.default {
+    background-image: url(images/cat_black.png);
+    background-size: contain;
+}
+
+.card::before { /* исправить темный текст на картинке путем псевдокласса */
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #c97c4990; /* прозрачный фон */
+}
+
+.card>* { /* для тегов span & h3 */
+    position: relative;
+}
+
+.card__like { /* сердечко лайка */
+position: absolute;
+top: 8px;
+right: 8px;
+color: crimson;
+cursor: pointer; /* при наведении мыши меняет курсор */
+}
+
+.card h3 {
+    margin-bottom: 5 px; /* расстояние меж строк */
+}
