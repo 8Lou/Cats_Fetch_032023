@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    color: rgb(45, 180, 233);
+    color: rgb(112, 245, 238);
 }
 
 h3 {
@@ -11,18 +11,19 @@ h3 {
 
 /* карточки */
 .container {
-    background-color: coral;
+    background-color: rgb(245, 142, 105);
     min-height: 100vh; /* мин высота */
-    padding: 30px; /* отступы */
-    box-sizing: border-box;
-    display: grid;
+    padding: 50px; /* отступы, margin нельзя использовать */
+    box-sizing: border-box; /* задает размер контента вместе с падингами */
+    display: grid; /* сеточка */
     grid-template-columns: repeat(4, 1fr); /* 4 карточки в ряд с одинак рас */
     align-content: flex-start; /* выравнивание по верхней части */
-    gap: 30px; /* расстояние меж карточками */
+    gap: 50px; /* расстояние меж карточками */
 }
 
 .card {
     background-color: rgb(204, 195, 195);
+    height: 150px; /* сам регулируешь высоту карточки */
     padding: 15px;
     text-align: center; /* выравнивание текста по центру */
     position: relative; /* что-то для сердечка */
@@ -49,7 +50,7 @@ h3 {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #c97c4990; /* прозрачный фон */
+    background-color: #c97c4940; /* прозрачный фон */
 }
 
 .card>* { /* для тегов span & h3 */
