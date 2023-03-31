@@ -28,7 +28,7 @@ function createCard(cat, el = box) { /* чтобы функция заработ
             card.style.backgroundImage = `url(${cat.image})`
         }; /* если нет фото - алтернатива или фото */
 
-    const name = document.createElement('h3');
+    const name = document.createElement('h2');
     name.innerText = cat.name; /* добавить имя кота */
     const like = document.createElement('i');
     like.className = 'fa-heart card__like'; /* сердечко-лайк */
@@ -36,10 +36,10 @@ function createCard(cat, el = box) { /* чтобы функция заработ
     like.addEventListener("click", e => { /* обработка нажатия на сердечко-лайк */
         e.stopPropagation(); /* остановить удаление карточек при нажатии */
         if (cat.id) {
-            fetch(`${path}/update/${cat.id}`, { /* логика но с интерполяцией */
+            fetch(`${path}/update/${cat.id}`, { /* логика с интерполяцией */
                 method: "PUT", /* изменить/обновить данные */
                 headers: {
-                    "Content-Type": "application/json" /* ЗАПОМНИТЬ эту комбинацию! */
+                    "Content-Type": "application/json" /* ЗАПОМНИТЬ комбинацию! */
                 },
                 body: JSON.stringify({ favorite: !cat.favorite }) /* если было true - станет false и наоборот */
             })

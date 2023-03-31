@@ -2,10 +2,10 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    color: rgb(112, 245, 238);
+    color: rgb(4, 43, 70);
 }
 
-h3 {
+h2 {
     margin: 0;
 }
 
@@ -23,19 +23,21 @@ h3 {
 
 .card {
     background-color: rgb(204, 195, 195);
-    height: 150px; /* сам регулируешь высоту карточки */
-    padding: 15px;
-    text-align: center; /* выравнивание текста по центру */
-    position: relative; /* что-то для сердечка */
+    height: 150px; /* высота карточки */
+    padding: 10px;
+    text-align: absolute;
+    bottom: 0; /* выравнивание текста */
+    position: relative; /* для сердечка */
     border-radius: 8px;
     background-image: url(https://mobimg.b-cdn.net/v3/fetch/25/25226515c9fe72ab7a2c45a72f9283c3.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover; /* по размеру карточки */
-    overflow: hidden; /* убрать все выпадающие части фона */
+    overflow: hidden; /* убрать все выпадающие из карточки части */
     display: flex;
     flex-direction: column; /* сверху вниз */
     justify-content: center;
+    box-shadow: 0 0 15px coral, 0 0 15px black; /* тень и контур */
 }
 
 .default {
@@ -43,14 +45,14 @@ h3 {
     background-size: contain;
 }
 
-.card::before { /* исправить темный текст на картинке путем псевдокласса */
+.card::before { /* исправить темный текст на фоне путем псевдокласса */
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: #c97c4940; /* прозрачный фон */
+    background-color: #c97c4940; /* последние 2 цифры прозрачность фона */
 }
 
 .card>* { /* для тегов span & h3 */
@@ -65,6 +67,6 @@ color: crimson;
 cursor: pointer; /* при наведении мыши меняет курсор */
 }
 
-.card h3 {
+.card h2 {
     margin-bottom: 5 px; /* расстояние меж строк */
 }
